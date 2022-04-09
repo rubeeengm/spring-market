@@ -37,8 +37,8 @@ public class ProductController {
         @PathVariable("productId") int productId
     ) {
         return this.productService.getProduct(productId)
-                    .map(product -> new ResponseEntity<>(product, HttpStatus.OK)
-                    ).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND))
+                    .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
+                    .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND))
         ;
     }
 
