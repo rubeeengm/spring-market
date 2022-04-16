@@ -2,9 +2,9 @@ package com.proday.market.web.controller;
 
 import com.proday.market.domain.dto.AuthenticationRequest;
 import com.proday.market.domain.dto.AuthenticationResponse;
-
 import com.proday.market.domain.service.SpringUserDetailsService;
 import com.proday.market.web.security.JWTUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +48,7 @@ public class AuthController {
                 request.getUsername()
             );
 
-            String jwt = this.jwtUtil.generarToken(userDetails);
+            String jwt = this.jwtUtil.generateToken(userDetails);
 
             return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
         } catch(BadCredentialsException e) {
